@@ -7,7 +7,7 @@ router.get('/listar', async (req, res) => {
     res.json({ productos });
 });
 
-router.post('/listar_producto/:pro_codigo', async (req, res) => {
+router.get('/listar_producto/:pro_codigo', async (req, res) => {
 
     const pro_codigo = req.params.pro_codigo;
 
@@ -26,6 +26,8 @@ router.put('/modificar/:pro_codigo', async (req, res) => {
     const pro_codigo = req.params.pro_codigo;
 
     const modificar_producto = await productoController.ModidicarProducto(pro_codigo, req.body);
+    res.json({ msg: "producto editado exitosamente" });
+
 });
 
 module.exports = router;
