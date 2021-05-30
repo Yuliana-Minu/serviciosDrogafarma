@@ -26,6 +26,7 @@ app.use(require('./routes'));
 app.use('/api/producto',require('./routes/apis/producto/producto'));
 app.use('/api/persona',require('./routes/apis/persona/persona'));
 app.use('/api/ventas',require('./routes/apis/ventas/ventas'));
+app.use('/api/reporte',require('./routes/apis/reporte/reporte'));
 
 
 
