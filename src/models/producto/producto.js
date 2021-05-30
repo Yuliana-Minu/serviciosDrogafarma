@@ -9,6 +9,13 @@ module.exports = function () {
         return data
     }
 
+    async function ListProducto(pro_codigo){
+        
+        const data = await pool.query('SELECT * FROM producto WHERE pro_codigo = ? ', [pro_codigo]);
+        
+        return data
+    }
+
     async function RegistroProducto(req){
 
         const data = await pool.query('INSERT INTO producto set ?',[req]);
@@ -27,5 +34,6 @@ module.exports = function () {
         Producto,
         RegistroProducto,
         ModidicarProducto, 
+        ListProducto
     }
 }

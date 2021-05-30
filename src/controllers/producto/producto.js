@@ -9,6 +9,13 @@ async function Productos (req = null){
     return listado_producto
 }
 
+async function ListProducto (pro_codigo){
+
+    const list_producto = await productoModel().ListProducto(pro_codigo)
+    
+    return list_producto
+}
+
 async function RegistroProducto (req){
     //console.log(req);
     const registro_producto = await productoModel().RegistroProducto(req)
@@ -25,4 +32,5 @@ module.exports = {
     Productos,
     RegistroProducto,
     ModidicarProducto,
+    ListProducto
 }

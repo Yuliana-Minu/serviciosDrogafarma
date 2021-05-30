@@ -7,6 +7,14 @@ router.get('/listar', async(req, res) =>{
     res.json({ productos });
 });
 
+router.post('/listar_producto/:pro_codigo', async(req, res) =>{
+
+    const  pro_codigo = req.params.pro_codigo;
+
+    const list_producto = await productoController.ListProducto(pro_codigo);
+    res.json({ list_producto });
+});
+
 router.post('/crear', async(req, res) =>{
     const crear_producto = await productoController.RegistroProducto(req.body);
 });
