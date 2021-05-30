@@ -24,6 +24,7 @@ app.use((req,res,next)=>{
 app.use(require('./routes'));
 
 app.use('/api/producto',require('./routes/apis/producto/producto'));
+app.use('/api/persona',require('./routes/apis/persona/persona'));
 
 
 
