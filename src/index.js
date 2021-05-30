@@ -8,9 +8,22 @@ app.set('port', process.env.PORT || 4000);
 
 
 //peticiones
+app.use(morgan('dev'));
 
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
+
+
+//Variables Globales
+app.use((req,res,next)=>{
+    next();
+});
 
 //rutas
+
+app.use(require('./routes'));
+
+app.use('/api/producto',require('./routes/apis/producto/producto'));
 
 
 
